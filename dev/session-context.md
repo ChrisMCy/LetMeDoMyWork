@@ -8,6 +8,7 @@
 | 001 | Install Flutter SDK | Flutter 3.38.8 at C:\src\flutter |
 | 002 | Install Android Studio | SDK platforms 21, 34, 36; all tools installed |
 | 003 | Install Git | Git 2.50.1; repo initialized and pushed to GitHub |
+| 004 | Install IDE Plugins | Done as part of task 002 (Android Studio plugins) |
 | 005 | Accept Android Licenses | Done as part of task 002 |
 | 011 | Initialize Git Repo | Done as part of task 003 |
 
@@ -31,10 +32,8 @@
 - All task files in `dev/finished/` for tasks 001, 002, 003
 
 ### Next Tasks to Execute
-1. **Task 004** - Install IDE Plugins (VS Code Flutter/Dart extensions)
-2. **Task 005** - ALREADY DONE (android licenses)
-3. **Task 006** - Create Flutter Project
-4. **Task 011** - ALREADY DONE (git repo)
+1. **Task 006** - Create Flutter Project
+2. Remaining Phase 0 tasks, then Phase 1+
 
 ### Workflow Reminders
 - Each task has **3 files** with same NNN prefix (main, -context.md, -tasks.md)
@@ -54,4 +53,4 @@ git log --oneline -3    # Recent commits
 ```
 
 ## Last Updated
-- 2026-01-30 (context compaction update)
+- 2026-01-30 (Task 004 completed)
