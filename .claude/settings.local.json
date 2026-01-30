@@ -44,7 +44,13 @@
       "Bash(git init:*)",
       "Bash(git remote add:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(cmdkey /delete:git:https://github.com)",
+      "Bash(git credential-manager:*)",
+      "Bash(del nul)"
     ],
     "deny": [],
     "ask": []
