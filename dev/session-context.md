@@ -1,54 +1,57 @@
-﻿# Session Context
-
-## Summary
-- Installed Flutter SDK 3.38.8 (stable) to C:\\src\\flutter and added to user PATH.
-- Verified with lutter --version and lutter doctor -v.
-
-## Key decisions
-- Used official Flutter release metadata to select latest stable (3.38.8).
-- Downloaded via BITS to avoid corruption/timeouts.
-
-## Issues/Blockers
-- flutter doctor reports missing Android SDK/toolchain; requires Android Studio install.
-
-## Commands run
-- winget --version
-- winget search flutter
-- Invoke-RestMethod to read releases_windows.json
-- Start-BitsTransfer download of flutter_windows_3.38.8-stable.zip
-- Expand-Archive to C:\\src
-- flutter --version
-- flutter doctor -v
-
-## Unfinished work
-- Task 002 (Android Studio install) still pending.
-
-## Handoff notes
-- Flutter is installed and PATH updated; Android SDK still missing per doctor.
-
-## Last Updated
-- 2026-01-29 21:13
 # Session Context
 
-## Update
-- User requested pause before Android Studio installation.
-- winget search for Android Studio was started but aborted by user.
+## Current State (2026-01-30)
 
-## Session 2026-01-30
-- Task 002 (Android Studio) COMPLETED
-- Android Studio installed with SDK platforms API 21, 34, 36
-- SDK Tools: Build-Tools 36.1.0, Emulator 36.3.10.0, Platform-Tools
-- Flutter & Dart plugins installed
-- Android licenses accepted via `flutter doctor --android-licenses`
-- `flutter doctor` now shows all green checkmarks
-- Task 005 (Accept Android Licenses) also completed as part of task 002
+### Completed Tasks
+| Task | Description | Notes |
+|------|-------------|-------|
+| 001 | Install Flutter SDK | Flutter 3.38.8 at C:\src\flutter |
+| 002 | Install Android Studio | SDK platforms 21, 34, 36; all tools installed |
+| 003 | Install Git | Git 2.50.1; repo initialized and pushed to GitHub |
+| 005 | Accept Android Licenses | Done as part of task 002 |
+| 011 | Initialize Git Repo | Done as part of task 003 |
 
-- Task 003 (Install Git) COMPLETED
-- Git 2.50.1 was already installed
-- Updated git config: user.name="Moszinger", user.email="christian.mosz@gmail.com"
-- Initialized git repo, connected to GitHub: https://github.com/ChrisMCy/LetMeDoMyWork
-- Created .gitignore, initial commit pushed
-- Task 011 (Initialize Git Repo) also completed as part of task 003
+### Environment Status
+- **Flutter:** 3.38.8 stable at `C:\src\flutter`
+- **Android Studio:** Installed with SDK 21, 34, 36
+- **Git:** 2.50.1, config: user.name="Moszinger", user.email="christian.mosz@gmail.com"
+- **GitHub:** https://github.com/ChrisMCy/LetMeDoMyWork (HTTPS, not SSH)
+- **flutter doctor:** All green checkmarks ✓
+
+### Key Decisions This Session
+1. Updated git config from Moszbuild to Moszinger with new email
+2. Used HTTPS for GitHub (SSH key was linked to different account)
+3. Tasks 005 and 011 were completed as side effects of tasks 002 and 003
+4. Added code review agents (architecture-reviewer, refactor-planner) to /task workflow
+
+### Files Modified/Created
+- `.gitignore` - Flutter/Android/IDE patterns
+- `CLAUDE.md` - Claude Code guidance with code review agents section
+- `.claude/commands/task.md` - Added step 3 for code review agents
+- All task files in `dev/finished/` for tasks 001, 002, 003
+
+### Next Tasks to Execute
+1. **Task 004** - Install IDE Plugins (VS Code Flutter/Dart extensions)
+2. **Task 005** - ALREADY DONE (android licenses)
+3. **Task 006** - Create Flutter Project
+4. **Task 011** - ALREADY DONE (git repo)
+
+### Workflow Reminders
+- Each task has **3 files** with same NNN prefix (main, -context.md, -tasks.md)
+- Move ALL 3 files to `dev/finished/` when complete
+- For code tasks (Phase 1+), run architecture review + refactor planning agents
+- Skip code review for Phase 0 (environment setup)
+
+### Known Issues
+- Accidental `nul` file in project root (Windows artifact, can be ignored)
+- SSH key linked to ChristianMosz, repo under ChrisMCy (using HTTPS instead)
+
+## Commands to Verify Setup
+```bash
+flutter doctor          # Should show all green
+git remote -v           # origin -> ChrisMCy/LetMeDoMyWork.git
+git log --oneline -3    # Recent commits
+```
 
 ## Last Updated
-- 2026-01-30
+- 2026-01-30 (context compaction update)
