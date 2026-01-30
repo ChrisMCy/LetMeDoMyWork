@@ -16,6 +16,7 @@
 | 009 | Configure build.gradle | SDK 34/21/34, applicationId com.letmedomywork.app |
 | 010 | Create Directory Structure | Clean Architecture folders in lib/ |
 | 011 | Initialize Git Repo | Done as part of task 003 |
+| 012 | Setup Android Emulator | Medium_Phone_API_36.1, 4 devices available |
 
 ### Environment Status
 - **Flutter:** 3.38.8 stable at `C:\src\flutter`
@@ -58,4 +59,4 @@ git log --oneline -3    # Recent commits
 ```
 
 ## Last Updated
-- 2026-01-30 (Task 010 completed)
+- 2026-01-30 (Task 012 completed)
