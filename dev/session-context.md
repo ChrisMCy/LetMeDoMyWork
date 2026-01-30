@@ -12,6 +12,7 @@
 | 005 | Accept Android Licenses | Done as part of task 002 |
 | 006 | Create Flutter Project | `letmedomywork/` with package com.letmedomywork.letmedomywork |
 | 007 | Configure pubspec.yaml | All dependencies added (90 packages) |
+| 008 | Configure Android Manifest | Permissions, boot receiver, app label |
 | 011 | Initialize Git Repo | Done as part of task 003 |
 
 ### Environment Status
@@ -55,4 +56,4 @@ git log --oneline -3    # Recent commits
 ```
 
 ## Last Updated
-- 2026-01-30 (Task 007 completed)
+- 2026-01-30 (Task 008 completed)
