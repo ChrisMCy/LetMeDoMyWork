@@ -1,0 +1,87 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv:*)",
+      "Bash(git grep:*)",
+      "Bash(poetry run ruff:*)",
+      "Bash(where:*)",
+      "Bash(uv --version:*)",
+      "mcp__serena__find_symbol",
+      "mcp__serena__activate_project",
+      "mcp__serena__search_for_pattern",
+      "mcp__serena__read_file",
+      "mcp__serena__replace_content",
+      "mcp__serena__insert_before_symbol",
+      "mcp__serena__find_file",
+      "mcp__serena__insert_after_symbol",
+      "mcp__serena__replace_symbol_body",
+      "Bash(poetry run pytest:*)",
+      "Bash(export STAGE=local)",
+      "mcp__serena__get_symbols_overview",
+      "mcp__serena__rename_symbol",
+      "mcp__serena__create_text_file",
+      "mcp__serena__list_dir",
+      "mcp__serena__think_about_collected_information",
+      "mcp__serena__think_about_whether_you_are_done",
+      "mcp__serena__list_memories",
+      "SlashCommand(/test_write:*)",
+      "mcp__serena__read_memory",
+      "Bash(do echo \"$file\")",
+      "Bash(findstr:*)",
+      "Bash(poetry run python:*)",
+      "mcp__serena__find_referencing_symbols",
+      "mcp__serena__check_onboarding_performed",
+      "mcp__serena__think_about_task_adherence",
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(Move-Item -Path \"C:\\\\Users\\\\chris\\\\Desktop\\\\LetMeDoMyWork\\\\dev\\\\active\\\\001-phase0-install-flutter-sdk.md\" -Destination \"C:\\\\Users\\\\chris\\\\Desktop\\\\LetMeDoMyWork\\\\dev\\\\finished\"\")",
+      "Bash(powershell -Command:*)",
+      "Bash(flutter doctor:*)",
+      "Bash(cmd /c \"echo y | echo y | echo y | echo y | echo y | echo y | echo y | flutter doctor --android-licenses\")",
+      "Bash(yes:*)",
+      "Bash(git --version)",
+      "Bash(git config:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "serena"
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:CLAUDE_PROJECT_DIR/.claude/hooks/post-tool-use-tracker.ps1\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:CLAUDE_PROJECT_DIR/.claude/hooks/skill-activation-prompt.ps1\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:CLAUDE_PROJECT_DIR/.claude/hooks/codex-reminder-hook.ps1\""
+          }
+        ]
+      }
+    ]
+  }
+}

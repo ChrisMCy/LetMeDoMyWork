@@ -1,0 +1,83 @@
+{
+    "version":  "1.0",
+    "description":  "Skill activation rules for Reebuild backend work.",
+    "skills":  {
+                   "reebuild-backend-guidelines":  {
+                                                       "type":  "domain",
+                                                       "enforcement":  "suggest",
+                                                       "priority":  "high",
+                                                       "description":  "Backend guidelines for Reebuild (Flask, GraphQL, Celery, DDD modules/packages).",
+                                                       "promptTriggers":  {
+                                                                              "keywords":  [
+                                                                                               "use case",
+                                                                                               "use cases",
+                                                                                               "uc",
+                                                                                               "repository",
+                                                                                               "graphql",
+                                                                                               "mutation",
+                                                                                               "query",
+                                                                                               "flask",
+                                                                                               "rest",
+                                                                                               "celery",
+                                                                                               "task",
+                                                                                               "domain entity",
+                                                                                               "mapper",
+                                                                                               "alembic",
+                                                                                               "migration",
+                                                                                               "filter options",
+                                                                                               "inmemory",
+                                                                                               "sqlalchemy",
+                                                                                               "ddd"
+                                                                                           ],
+                                                                              "intentPatterns":  [
+                                                                                                     "(create|add|implement|update|refactor).*?(use case|uc|repository|graphql|mutation|query|rest|celery|task)",
+                                                                                                     "(how to|best practice).*?(use case|repository|graphql|celery|migration)",
+                                                                                                     "(add|change|modify).*?(schema|mapper|enum|field type|migration)"
+                                                                                                 ]
+                                                                          },
+                                                       "fileTriggers":  {
+                                                                            "pathPatterns":  [
+                                                                                                 "reebuild/app/modules/**/*.py",
+                                                                                                 "reebuild/app/packages/**/*.py",
+                                                                                                 "reebuild/worker/**/*.py",
+                                                                                                 "reebuild/scripts/**/*.py"
+                                                                                             ],
+                                                                            "pathExclusions":  [
+                                                                                                   "**/*_test.py"
+                                                                                               ],
+                                                                            "contentPatterns":  [
+                                                                                                    "class UC",
+                                                                                                    "IRepository",
+                                                                                                    "RepositorySql",
+                                                                                                    "RepositoryInMem",
+                                                                                                    "@instrumented_task",
+                                                                                                    "IG",
+                                                                                                    "QG"
+                                                                                                ]
+                                                                        }
+                                                   },
+                   "skill-developer":  {
+                                           "type":  "domain",
+                                           "enforcement":  "suggest",
+                                           "priority":  "high",
+                                           "description":  "Meta-skill for creating and managing Claude Code skills",
+                                           "promptTriggers":  {
+                                                                  "keywords":  [
+                                                                                   "skill system",
+                                                                                   "create skill",
+                                                                                   "add skill",
+                                                                                   "skill triggers",
+                                                                                   "skill rules",
+                                                                                   "hook system",
+                                                                                   "skill development",
+                                                                                   "skill-rules.json"
+                                                                               ],
+                                                                  "intentPatterns":  [
+                                                                                         "(how do|how does|explain).*?skill",
+                                                                                         "(create|add|modify|build).*?skill",
+                                                                                         "skill.*?(work|trigger|activate|system)"
+                                                                                     ]
+                                                              }
+                                       }
+               }
+}
