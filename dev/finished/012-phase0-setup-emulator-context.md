@@ -11,9 +11,13 @@ COMPLETED
 - None (emulator was already configured)
 
 ## Blockers or issues discovered
-- Android APK build fails (gradle issue, not related to emulator)
-- Windows build fails (file_picker plugin issue)
-- Web build works fine
+- Android APK build initially failed - FIXED by updating:
+  - flutter_local_notifications: ^20.0.0
+  - file_picker: ^10.0.0
+  - workmanager: ^0.9.0
+  - compileSdk: 36, desugar_jdk_libs: 2.1.4
+- Windows build fails (file_picker plugin issue - separate issue)
+- Web and Android builds now work
 
 ## Next immediate steps
 - Task complete, move to finished folder
